@@ -2,7 +2,7 @@
 DIscord Chatbot written in JS powered by NodeJS + DialoGPT-large. Hosted on repl for free 24/7 uptime.  
   
 TODO:
-1. Limit bot activity to only specific channel name or call.
+1. ~~Limit bot activity to only specific channel name or call.~~ is now only limited to `bot-channel` channel name
 2. Add documentation on how to add bot to servers.
 3. Add more functionality to bot.
 4. Train the bot.
