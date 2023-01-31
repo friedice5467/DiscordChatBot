@@ -3,7 +3,7 @@ DIscord Chatbot written in JS powered by NodeJS + DialoGPT-large. Hosted on repl
   
 If you want to add it to your server, paste this  
 `https://discord.com/api/oauth2/authorize?client_id=1053064397792223273&permissions=75776&scope=bot`  
-in your browser or [Click This](https://discord.com/api/oauth2/authorize?client_id=1053064397792223273&permissions=75776&scope=bot) and invite it to your server. Create a seperate channel called `bot-channel` and every message sent in there will be directed to the bot. 
+in your browser or [Click This](https://discord.com/api/oauth2/authorize?client_id=1053064397792223273&permissions=75776&scope=bot) and invite it to your server. Create a seperate channel called `bot-channel` and every message sent in there will be directed to the bot who will probably(?) reply
 
 TODO:
 1. ~~Limit bot activity to only specific channel name or call.~~ is now only limited to `bot-channel` channel name
