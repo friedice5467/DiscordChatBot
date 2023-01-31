@@ -1,4 +1,4 @@
-# Discord_Chat_Bot
+# Discord Chat Bot
 DIscord Chatbot written in JS powered by NodeJS + DialoGPT-large. Hosted on repl for free 24/7 uptime.
 TODO:
 1. Limit bot activity to only specific channel name or call.
