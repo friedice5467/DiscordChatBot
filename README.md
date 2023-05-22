@@ -6,7 +6,7 @@ To add the bot to your server, simply paste the following URL into your browser:
 
 `https://discord.com/api/oauth2/authorize?client_id=1053064397792223273&permissions=75776&scope=bot` 
 
-Alternatively, you can click [here](https://discord.com/api/oauth2/authorize?client_id=1053064397792223273&permissions=75776&scope=bot) to invite the bot to your server. Once the bot is added, tag @IceBot and then say whatever you want to talk toit.
+Alternatively, you can click [here](https://discord.com/api/oauth2/authorize?client_id=1053064397792223273&permissions=75776&scope=bot) to invite the bot to your server. Once the bot is added, tag @IceBot to talk to it.
 
 TODO:
 1. Restrict bot activity to a specific channel name or call. - DONE
