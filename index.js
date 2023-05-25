@@ -1,5 +1,4 @@
 const keepAlive = require("./server");
-const fetch = require('node-fetch');
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({
   intents: [
@@ -32,25 +31,25 @@ client.on("ready", () => {
     const commandWord = words.find(word => word.startsWith('!'));
 
     if (commandWord) {
-  // the message contains a command, process it
-  let command = commandWord.trim().substring(1).toLowerCase(); // Remove "!" prefix and convert to lower case
+      // the message contains a command, process it
+      let command = commandWord.trim().substring(1).toLowerCase(); // Remove "!" prefix and convert to lower case
 
-  switch (command) {
-    case "summon":
-      botResponse = "<:hmmcouncil1:1108159415632281602><:hmmcouncil2:1108159413598044190><:hmmcouncil3:1108159412285231155><:hmmcouncil4:1108159410343264257><:hmmcouncil5:1108159408694894653>";
-      break;
-    case "help":
-      botResponse = "Help yourself noob";
-      break;
-    default:
-      botResponse = "Command not found";
-      break;
-  }
-}
-else if (message.mentions.users.has(client.user.id)) {
+      switch (command) {
+        case "summon":
+          botResponse = "<:hmmcouncil1:1108159415632281602><:hmmcouncil2:1108159413598044190><:hmmcouncil3:1108159412285231155><:hmmcouncil4:1108159410343264257><:hmmcouncil5:1108159408694894653>";
+          break;
+        case "help":
+          botResponse = "Help yourself noob";
+          break;
+        default:
+          return;
+      }
+    }
+    else if (message.mentions.users.has(client.user.id)) {
       // The bot was mentioned, but the message is not a command
       let messageContent = message.content.replace(`<@${client.user.id}>`, "").trim();
       if (messageContent !== '') {
+        const fetch = require('node-fetch');
         const payload = {
           inputs: {
             text: messageContent
