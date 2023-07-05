@@ -24,6 +24,14 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
+client.loggers = new Map();
+const loggerFiles = fs.readdirSync('./loggers').filter(file => file.endsWith('.js'));
+
+for (const file of loggerFiles) {
+  const logger = require(`./loggers/${file}`);
+  client.loggers.set(logger.name, logger);
+}
+
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -51,6 +59,22 @@ client.on('messageCreate', async message => {
     await handleTwitterLinks(message);
   }
 });
+
+const eventLoggerMap = {
+  'guildMemberAdd': 'logMemberJoined',
+  'guildMemberRemove': 'logMemberLeft',
+  'messageDelete': 'logMemberDelMsg',
+  'messageUpdate': 'logMemberEditMsg',
+  // add more if needed
+};
+
+for (const [eventName, loggerName] of Object.entries(eventLoggerMap)) {
+  client.on(eventName, (...args) => {
+    if (client.loggers.has(loggerName)) {
+      client.loggers.get(loggerName).execute(...args);
+    }
+  });
+}
 
 keepAlive();
 client.login(process.env['discToken']);
