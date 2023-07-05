@@ -6,7 +6,7 @@ The Discord Chat Bot is a NodeJS-powered chatbot utilizing DialoGPT-large and ho
 
 - ChatAI: The bot utilizes the powerful ModelBlender from Facebook to provide conversational responses.
 - URL Embedding: The bot automatically replaces `https://twitter..` links with `https://vxtwitter..` to embed tweets in the chat.
-- Commands: Use the `!commands` command to view a list of available bot commands.
+- Commands: Use the `!help` command to view a list of available bot commands.
 - Summon Emotes: Try the `!summon` command to make the bot send emotes.
 
 ## Adding the Bot to Your Server
