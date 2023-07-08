@@ -7,6 +7,7 @@ const keepAlive = require("./server");
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers,
     GatewayIntentBits.DirectMessages,
     GatewayIntentBits.DirectMessageTyping,
     GatewayIntentBits.GuildMessages,
@@ -70,6 +71,7 @@ const eventLoggerMap = {
 
 for (const [eventName, loggerName] of Object.entries(eventLoggerMap)) {
   client.on(eventName, (...args) => {
+    console.log(`${eventName} event triggered`); 
     if (client.loggers.has(loggerName)) {
       client.loggers.get(loggerName).execute(...args);
     }

@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
-async function getExercise() {
-    const response = await fetch('https://api.api-ninjas.com/v1/exercises', {
+async function getExercise(muscle) {
+    const response = await fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`, {
         headers: { 'X-Api-Key': process.env['ninjaAPIToken'] }
     });
 

@@ -1,8 +1,14 @@
+const { EmbedBuilder } = require('discord.js');
+
 module.exports = {
     name: 'help',
     description: 'Help command',
     async execute(message, args) {
-        let botResponse = "Help yourself noob";
-        message.channel.send(botResponse);
+        const validTypes = ['!summon', '!getgym'];
+        const helpEmbed = new EmbedBuilder()
+                      .setColor('#0099FF')
+                      .setTitle('Command List')
+                      .setDescription(`\`\`\` ${validTypes.join('\n ')}\`\`\``);
+                    return message.channel.send({ embeds: [helpEmbed] });
     },
 };
