@@ -66,6 +66,7 @@ const eventLoggerMap = {
   'guildMemberRemove': 'logMemberLeft',
   'messageDelete': 'logMemberDelMsg',
   'messageUpdate': 'logMemberEditMsg',
+  'logFateSus' : 'logFateAmogus'
   // add more if needed
 };
 
