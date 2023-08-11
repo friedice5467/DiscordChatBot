@@ -2,6 +2,7 @@ const fs = require('fs');
 const { Client, GatewayIntentBits } = require('discord.js');
 const handleTwitterLinks = require('./helpers/embedTwitterHandler');
 const handleBotMention = require('./helpers/chatBotHandler');
+const { logFateSus, handleEditedMessage } = require('./loggers/logFateAmogus'); 
 const keepAlive = require("./server");
 
 const client = new Client({
@@ -58,7 +59,14 @@ client.on('messageCreate', async message => {
     await handleBotMention(message, client);
   } else {
     await handleTwitterLinks(message);
+    await logFateSus(message); 
   }
+});
+
+client.on('messageUpdate', async (oldMessage, newMessage) => {
+  if (newMessage.author.bot) return;
+  
+  await handleEditedMessage(oldMessage, newMessage);
 });
 
 const eventLoggerMap = {
@@ -66,7 +74,6 @@ const eventLoggerMap = {
   'guildMemberRemove': 'logMemberLeft',
   'messageDelete': 'logMemberDelMsg',
   'messageUpdate': 'logMemberEditMsg',
-  'logFateSus' : 'logFateAmogus'
   // add more if needed
 };
 
