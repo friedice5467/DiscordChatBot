@@ -10,18 +10,34 @@ The Discord Chat Bot is a NodeJS-powered chatbot for Discord. It incorporates va
 ### URL Embedding
 - Enhance tweet visibility: Any shared link from `https://twitter..` gets transformed into `https://vxtwitter..`, allowing tweets to be embedded directly in the chat.
 
-### Commands
-- The bot recognizes commands prefixed with `!`.
-- Use the `!help` command to view a comprehensive list of available bot commands.
-
 ### Event Logging
 - The bot can handle various events, such as members joining or leaving the server and message updates.
 - Logged messages will be in ``#logs`` channel
 
-### Misc Features
-- When the bot is mentioned using `@IceBot`, it responds interactively.
-- Integrated loggers such as `logFateSus` to manage specific use cases.
-- Robust error handling: If any command runs into an issue, the bot informs the user about the encountered error.
+### Commands
+- The bot recognizes commands prefixed with `!`.
+- Use the `!help` command to view a comprehensive list of available bot commands.
+
+!getgym Command - Personalized Workout Recommendations
+Harness the power of OpenAI's ChatGPT for personalized gym recommendations tailored to your needs. Whether you're a beginner, a seasoned athlete, or anywhere in between, !getgym crafts a workout just for you.
+
+How to Use:
+!getgym muscle duration type physical-level intensity:
+muscle: Target muscle group (e.g. biceps, triceps, chest). Use !getgym muscle to see the full list.
+duration: Workout duration in hours (e.g. 1hr, 0.5hr).
+type: simple for a basic workout list, full for detailed instructions.
+physical-level: Your fitness level, from 1 (beginner) to 4 (elite athlete). Use !getgym level to view the scale.
+intensity: Workout intensity, from 1 (low) to 4 (super high intensity). Use !getgym intensity to view the scale.
+Example: !getgym biceps 1hr simple 2 2 – This will generate a simple bicep workout designed for an intermediate gym-goer at a medium intensity level.
+Additional Commands:
+!getgym muscle: View the full list of supported muscle groups.
+!getgym duration: Learn how to specify your workout duration.
+!getgym type: Understand the difference between 'simple' and 'full' workout instructions.
+!getgym level: See the available physical levels and what they mean.
+!getgym intensity: Discover the intensity scale to pick what suits you.
+This feature uses OpenAI's advanced AI models to generate workouts, ensuring the recommendations are tailored and dynamic.
+
+
   
 ## Adding the Bot to Your Server
 
