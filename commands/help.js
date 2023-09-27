@@ -4,7 +4,7 @@ module.exports = {
     name: 'help',
     description: 'Help command',
     async execute(message, args) {
-        const validTypes = ['!summon', '!getgym'];
+        const validTypes = ['!summon', '!getgym', '!wam', '!getProfile'];
         const helpEmbed = new EmbedBuilder()
                       .setColor('#0099FF')
                       .setTitle('Command List')
